@@ -4,15 +4,15 @@ metadata:
   name: nodejs
 spec:
   params:
-  -     name: source-repo
+  - name: source-repo
     type: string
     description: Source code repository
-  -     name: image-repo
+  - name: image-repo
     type: string
     description: Docker image repository
   tasks:
   - name: clone-repository
-      params:
+    params:
     - name: url
       value: "$(params.source-repo)"
     taskRef:
@@ -21,7 +21,7 @@ spec:
     workspaces:
     - name: output
       workspace: pipeline-shared-data
-  -   name: run-tests
+  - name: run-tests
     params:
     - name: ARGS
       value:
